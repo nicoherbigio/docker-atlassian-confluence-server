@@ -1,0 +1,13 @@
+### Exclude operating system specific files and directories
+
+# Mac
+.DS_Store
+
+### Exclude integrated development environment specific files and directories
+
+# PhpStorm
+.idea/
+
+### Exclude environment specific files and directories that stores security related information
+
+.env
