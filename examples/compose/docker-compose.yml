@@ -2,7 +2,7 @@ version: '3'
 
 services:
   confluence:
-    image: nicoherbigio/atlassian-confluence-server:6.6
+    image: nicoherbigio/atlassian-confluence-server:latest
     restart: always
     depends_on:
       - confluence-database
