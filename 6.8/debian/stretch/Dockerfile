@@ -53,7 +53,7 @@ RUN groupadd -r -g ${RUN_GROUP_ID} ${RUN_GROUP} && useradd -r -g ${RUN_GROUP} -u
 
 # Install Atlassian Confluence Server inclusive MySQL Connector
 
-ARG CONFLUENCE_VERSION=6.8.1
+ARG CONFLUENCE_VERSION=6.8.2
 ARG CONFLUENCE_DOWNLOAD_URL=https://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-${CONFLUENCE_VERSION}.tar.gz
 
 ARG MYSQL_CONNECTOR_VERSION=5.1.45
