@@ -34,7 +34,7 @@ RUN set -ex \
 
 # Install Tini
 
-ARG TINI_VERSION=0.16.1
+ARG TINI_VERSION=0.18.0
 ARG TINI_DOWNLOAD_URL=https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini
 
 RUN set -ex \
