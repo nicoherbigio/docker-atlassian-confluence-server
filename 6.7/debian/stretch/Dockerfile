@@ -56,7 +56,7 @@ RUN groupadd -r -g ${RUN_GROUP_ID} ${RUN_GROUP} && useradd -r -g ${RUN_GROUP} -u
 ARG CONFLUENCE_VERSION=6.7.2
 ARG CONFLUENCE_DOWNLOAD_URL=https://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-${CONFLUENCE_VERSION}.tar.gz
 
-ARG MYSQL_CONNECTOR_VERSION=5.1.45
+ARG MYSQL_CONNECTOR_VERSION=5.1.46
 ARG MYSQL_CONNECTOR_DOWNLOAD_URL=https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-${MYSQL_CONNECTOR_VERSION}.tar.gz
 
 ENV CONFLUENCE_INSTALL_DIR=/opt/atlassian/confluence
