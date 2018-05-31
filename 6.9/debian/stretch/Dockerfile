@@ -56,9 +56,6 @@ RUN groupadd -r -g ${RUN_GROUP_ID} ${RUN_GROUP} && useradd -r -g ${RUN_GROUP} -u
 ARG CONFLUENCE_VERSION=6.9.0
 ARG CONFLUENCE_DOWNLOAD_URL=https://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-${CONFLUENCE_VERSION}.tar.gz
 
-ARG MYSQL_CONNECTOR_VERSION=5.1.46
-ARG MYSQL_CONNECTOR_DOWNLOAD_URL=https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-${MYSQL_CONNECTOR_VERSION}.tar.gz
-
 ENV CONFLUENCE_INSTALL_DIR=/opt/atlassian/confluence
 ENV CONFLUENCE_HOME=/var/atlassian/confluence
 
@@ -66,16 +63,12 @@ ENV CONFLUENCE_HOME=/var/atlassian/confluence
 #   - Create installation directory
 #   - Create home directory
 #   - Download and unpack Atlassian Confluence Server
-#   - Create lib directory inside the installation directory
-#   - Download and unpack MySQL Connector
 #   - Set permissions for the Confluence installation directory
 #   - Set permissions for the Confluence home directory
 RUN set -ex \
     && mkdir -p ${CONFLUENCE_INSTALL_DIR} \
     && mkdir -p ${CONFLUENCE_HOME} \
     && curl -fSL ${CONFLUENCE_DOWNLOAD_URL} | tar -xz --no-same-owner --strip-components=1 -C ${CONFLUENCE_INSTALL_DIR} \
-    && mkdir -p ${CONFLUENCE_INSTALL_DIR}/lib \
-    && curl -fSL ${MYSQL_CONNECTOR_DOWNLOAD_URL} | tar -xz --no-same-owner --strip-components=1 -C ${CONFLUENCE_INSTALL_DIR}/lib "mysql-connector-java-${MYSQL_CONNECTOR_VERSION}/mysql-connector-java-${MYSQL_CONNECTOR_VERSION}-bin.jar" \
     && sed -i -e 's/-Xms\([0-9]\+[kmg]\) -Xmx\([0-9]\+[kmg]\)/-Xms\${JVM_MINIMUM_MEMORY:=\1} -Xmx\${JVM_MAXIMUM_MEMORY:=\2} \${JVM_SUPPORT_RECOMMENDED_ARGS} -Dconfluence.home=\${CONFLUENCE_HOME}/g' ${CONFLUENCE_INSTALL_DIR}/bin/setenv.sh \
     && sed -i -e 's/port="8090"/port="8090" secure="${catalinaConnectorSecure}" scheme="${catalinaConnectorScheme}" proxyName="${catalinaConnectorProxyName}" proxyPort="${catalinaConnectorProxyPort}"/' ${CONFLUENCE_INSTALL_DIR}/conf/server.xml \
     && chown -R ${RUN_USER}:${RUN_GROUP} ${CONFLUENCE_INSTALL_DIR} \
