@@ -1,6 +1,6 @@
 FROM nicoherbigio/debian:stretch
 
-LABEL vendor="Nico Herbig <nico@nicoherbig.io>"
+LABEL maintainer="Nico Herbig <nico@nicoherbig.io>"
 
 
 # Install Oracle Java Development Kit (JDK)
