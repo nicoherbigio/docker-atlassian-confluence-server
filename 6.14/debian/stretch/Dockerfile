@@ -32,7 +32,7 @@ RUN groupadd -r -g ${RUN_GROUP_ID} ${RUN_GROUP} && useradd -r -g ${RUN_GROUP} -u
 
 # Install Atlassian Confluence Server
 
-ARG CONFLUENCE_VERSION=6.14.0
+ARG CONFLUENCE_VERSION=6.14.1
 ARG CONFLUENCE_DOWNLOAD_URL=https://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-${CONFLUENCE_VERSION}.tar.gz
 
 ENV CONFLUENCE_INSTALL_DIR=/opt/atlassian/confluence
