@@ -11,7 +11,9 @@ env:
   DOCKER_IMAGE_CONTEXT_PATH: 6.13/debian/default/
   DOCKERHUB_IMAGE_TAGS: |
     nicoherbigde/atlassian-confluence-server:6.13
+    nicoherbigio/atlassian-confluence-server:6.13
     nicoherbigde/atlassian-confluence-server:6.13.4
+    nicoherbigio/atlassian-confluence-server:6.13.4
 
 jobs:
   build-and-push:
