@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 12 * * 1'
+    - cron: '0 3 * * 1'
 
 env:
   DOCKER_IMAGE_CONTEXT_PATH: 6.15/debian/default/
