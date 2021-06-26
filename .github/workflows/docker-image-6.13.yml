@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '.github/workflows/docker-image-6.13.yml'
+      - '6.13/**'
   schedule:
     - cron: '0 3 * * 1'
 
