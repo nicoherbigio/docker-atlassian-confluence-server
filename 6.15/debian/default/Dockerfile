@@ -7,7 +7,7 @@ LABEL maintainer="Nico Herbig <nico@nicoherbig.io>"
 
 RUN set -ex \
     && apt-get update \
-    && apt-get install -y --no-install-recommends bash ca-certificates curl fontconfig openssl perl procps wget \
+    && apt-get install -y --no-install-recommends bash ca-certificates curl fontconfig openssl perl procps wget zip unzip \
     && rm -rf /var/lib/apt/lists/*
 
 
@@ -38,6 +38,8 @@ ARG CONFLUENCE_DOWNLOAD_URL=https://www.atlassian.com/software/confluence/downlo
 ENV CONFLUENCE_INSTALL_DIR=/opt/atlassian/confluence
 ENV CONFLUENCE_HOME=/var/atlassian/confluence
 
+COPY assets/cve-2021-26084-update.sh /root/cve-2021-26084-update.sh
+
 # Actions to perform:
 #   - Create installation directory
 #   - Create home directory
@@ -48,6 +50,7 @@ RUN set -ex \
     && mkdir -p ${CONFLUENCE_INSTALL_DIR} \
     && mkdir -p ${CONFLUENCE_HOME} \
     && curl -fSL ${CONFLUENCE_DOWNLOAD_URL} | tar -xz --no-same-owner --strip-components=1 -C ${CONFLUENCE_INSTALL_DIR} \
+    && chmod a+x /root/cve-2021-26084-update.sh && /root/cve-2021-26084-update.sh \
     && sed -i -e 's/-Xms\([0-9]\+[kmg]\) -Xmx\([0-9]\+[kmg]\)/-Xms\${JVM_MINIMUM_MEMORY:=\1} -Xmx\${JVM_MAXIMUM_MEMORY:=\2} \${JVM_SUPPORT_RECOMMENDED_ARGS} -Dconfluence.home=\${CONFLUENCE_HOME}/g' ${CONFLUENCE_INSTALL_DIR}/bin/setenv.sh \
     && sed -i -e 's/port="8090"/port="8090" secure="${catalinaConnectorSecure}" scheme="${catalinaConnectorScheme}" proxyName="${catalinaConnectorProxyName}" proxyPort="${catalinaConnectorProxyPort}"/' ${CONFLUENCE_INSTALL_DIR}/conf/server.xml \
     && sed -i -e 's/Context path=""/Context path="${catalinaContextPath}"/' ${CONFLUENCE_INSTALL_DIR}/conf/server.xml \
