@@ -1,13 +1,18 @@
-### Exclude operating system specific files and directories
+### Ignore operating system specific files and directories
 
 # Mac
 .DS_Store
 
-### Exclude integrated development environment specific files and directories
+# Windows
+Thumbs.db
 
-# PhpStorm
+
+### Ignore integrated development environment specific files and directories
+
+# JetBrains Products
 .idea/
 
-### Exclude environment specific files and directories that stores security related information
 
-.env
+### Include .gitkeep files to preserve initial empty directory structures
+
+!**/.gitkeep
