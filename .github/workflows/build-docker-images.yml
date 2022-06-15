@@ -18,7 +18,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        version: [7.4]
+        version: [7.4, 7.13]
         include:
           - version: 7.4
             docker-context: 7.4/debian/default
@@ -27,6 +27,13 @@ jobs:
               nicoherbigio/atlassian-confluence-server:7.4
               nicoherbigde/atlassian-confluence-server:7.4.17
               nicoherbigio/atlassian-confluence-server:7.4.17
+          - version: 7.13
+            docker-context: 7.13/debian/default
+            docker-tags: |
+              nicoherbigde/atlassian-confluence-server:7.13
+              nicoherbigio/atlassian-confluence-server:7.13
+              nicoherbigde/atlassian-confluence-server:7.13.7
+              nicoherbigio/atlassian-confluence-server:7.13.7
 
     steps:
       - name: Checkout Git Repository
