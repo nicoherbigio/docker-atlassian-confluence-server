@@ -1,4 +1,4 @@
-FROM atlassian/confluence:7.13.9
+FROM atlassian/confluence:7.13.11
 
 LABEL maintainer="Nico Herbig <nico@nicoherbig.io>"
 
