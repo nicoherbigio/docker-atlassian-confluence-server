@@ -4,7 +4,7 @@
 
 ## Supported tags and respective `Dockerfile` links
 
- * [`7.19`, `7.19.1` (7.19/ubuntu/default/Dockerfile)](https://github.com/nicoherbigio/docker-atlassian-confluence-server/blob/main/7.19/ubuntu/default/Dockerfile)
+ * [`7.19`, `7.19.2` (7.19/ubuntu/default/Dockerfile)](https://github.com/nicoherbigio/docker-atlassian-confluence-server/blob/main/7.19/ubuntu/default/Dockerfile)
  * [`7.13`, `7.13.11` (7.13/ubuntu/default/Dockerfile)](https://github.com/nicoherbigio/docker-atlassian-confluence-server/blob/main/7.13/ubuntu/default/Dockerfile)
  * [`7.4`, `7.4.18` (7.4/ubuntu/default/Dockerfile)](https://github.com/nicoherbigio/docker-atlassian-confluence-server/blob/main/7.4/ubuntu/default/Dockerfile)
 
