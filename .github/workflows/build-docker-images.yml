@@ -41,8 +41,8 @@ jobs:
             docker-tags: |
               nicoherbigde/atlassian-confluence-server:7.19
               nicoherbigio/atlassian-confluence-server:7.19
-              nicoherbigde/atlassian-confluence-server:7.19.2
-              nicoherbigio/atlassian-confluence-server:7.19.2
+              nicoherbigde/atlassian-confluence-server:7.19.3
+              nicoherbigio/atlassian-confluence-server:7.19.3
 
     steps:
       - name: Checkout Git Repository
