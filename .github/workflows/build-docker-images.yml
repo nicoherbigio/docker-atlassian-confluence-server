@@ -26,23 +26,17 @@ jobs:
             docker-context: 7.4/ubuntu/default
             docker-tags: |
               nicoherbigde/atlassian-confluence-server:7.4
-              nicoherbigio/atlassian-confluence-server:7.4
               nicoherbigde/atlassian-confluence-server:7.4.18
-              nicoherbigio/atlassian-confluence-server:7.4.18
           - version: 7.13
             docker-context: 7.13/ubuntu/default
             docker-tags: |
               nicoherbigde/atlassian-confluence-server:7.13
-              nicoherbigio/atlassian-confluence-server:7.13
               nicoherbigde/atlassian-confluence-server:7.13.11
-              nicoherbigio/atlassian-confluence-server:7.13.11
           - version: 7.19
             docker-context: 7.19/ubuntu/default
             docker-tags: |
               nicoherbigde/atlassian-confluence-server:7.19
-              nicoherbigio/atlassian-confluence-server:7.19
               nicoherbigde/atlassian-confluence-server:7.19.3
-              nicoherbigio/atlassian-confluence-server:7.19.3
 
     steps:
       - name: Checkout Git Repository
