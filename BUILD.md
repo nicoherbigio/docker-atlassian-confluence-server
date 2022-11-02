@@ -18,7 +18,7 @@ The following command is required to build the current version.
 
 ```
 # Build the Docker image
-docker build --no-cache --pull --tag nicoherbigde/atlassian-confluence-server:7.19 7.19/ubuntu/default
+docker build --no-cache --pull --tag nicoherbigde/atlassian-confluence-server:7.19-jammy 7.19/ubuntu/default
 ```
 
 > **Hint:** For building an older version, the directory and file paths as well as the Docker tags must be adjusted accordingly, analogous to the previously mentioned command.
@@ -29,7 +29,7 @@ The following command is required to upload the current version.
 
 ```
 # Upload the Docker image to Docker Hub
-docker push nicoherbigde/atlassian-confluence-server:7.19
+docker push nicoherbigde/atlassian-confluence-server:7.19-jammy
 ```
 
 > **Hint:** For uploading an older version, the Docker tags must be adjusted accordingly, analogous to the previously mentioned command.

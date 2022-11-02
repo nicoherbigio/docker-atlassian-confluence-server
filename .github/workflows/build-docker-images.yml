@@ -20,23 +20,29 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        version: [7.4, 7.13, 7.19]
+        version: [7.4-jammy, 7.13-jammy, 7.19-jammy]
         include:
-          - version: 7.4
+          - version: 7.4-jammy
             docker-context: 7.4/ubuntu/default
             docker-tags: |
               nicoherbigde/atlassian-confluence-server:7.4
+              nicoherbigde/atlassian-confluence-server:7.4-jammy
               nicoherbigde/atlassian-confluence-server:7.4.18
-          - version: 7.13
+              nicoherbigde/atlassian-confluence-server:7.4.18-jammy
+          - version: 7.13-jammy
             docker-context: 7.13/ubuntu/default
             docker-tags: |
               nicoherbigde/atlassian-confluence-server:7.13
+              nicoherbigde/atlassian-confluence-server:7.13-jammy
               nicoherbigde/atlassian-confluence-server:7.13.11
-          - version: 7.19
+              nicoherbigde/atlassian-confluence-server:7.13.11-jammy
+          - version: 7.19-jammy
             docker-context: 7.19/ubuntu/default
             docker-tags: |
               nicoherbigde/atlassian-confluence-server:7.19
+              nicoherbigde/atlassian-confluence-server:7.19-jammy
               nicoherbigde/atlassian-confluence-server:7.19.3
+              nicoherbigde/atlassian-confluence-server:7.19.3-jammy
 
     steps:
       - name: Checkout Git Repository
