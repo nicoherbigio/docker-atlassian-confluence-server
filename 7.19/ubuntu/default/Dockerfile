@@ -27,3 +27,9 @@ RUN set -ex \
     && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en
+
+
+# Configure Atlassian Confluence Server
+
+RUN set -ex \
+    && sed -i -e 's/<session-timeout>60<\/session-timeout>/<session-timeout>300<\/session-timeout>/' /opt/atlassian/confluence/confluence/WEB-INF/web.xml
